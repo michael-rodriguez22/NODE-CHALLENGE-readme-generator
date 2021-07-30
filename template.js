@@ -6,10 +6,7 @@ const template = `
 ## Table of Contents
 * [Installation](#Installation)
 * [Usage](#Usage) 
-* [Credits](#Credits)
 * [License](#License)
-* [Badges](#Badges)
-* [Features](#Features)
 * [Contributing](#Contributing)
 * [Tests](#Tests)
 
@@ -17,13 +14,7 @@ const template = `
 
 ## Usage 
 
-## Credits
-
 ## License
-
-## Badges
-
-## Features
 
 ## Contributing
 
