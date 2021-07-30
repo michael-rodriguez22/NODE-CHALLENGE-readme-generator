@@ -1,7 +1,8 @@
-const template = `
-# Your Project Title
+const createTemplate = answers => `
+# ${answers.title}
 
 ## Description 
+${answers.description}
 
 ## Table of Contents
 * [Installation](#Installation)
@@ -11,12 +12,19 @@ const template = `
 * [Tests](#Tests)
 
 ## Installation
+${answers.installation}
 
 ## Usage 
+${answers.usage}
 
 ## License
+${answers.license}
 
 ## Contributing
+${answers.contributions}
 
 ## Tests
+${answers.tests}
 `
+
+module.exports = createTemplate;

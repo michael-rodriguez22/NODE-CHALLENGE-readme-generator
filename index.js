@@ -1,5 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
+const fs = require("fs");
+const createTemplate = require("./template");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -39,7 +41,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "Which of these licenses best fits your project?",
-    choices: [/*licenses.id licenses.name licenses.description.short*/]
+    choices: [1, 2, 3]/*licenses.id licenses.name licenses.description.short*/
   },
   {
     type: "input",
@@ -54,10 +56,16 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(title, data) {
+    const fileName = title.toLowerCase().split(' ').join('-');
+    fs.writeFile(`./${fileName}.md`, data, err => err ? console.log(err): console.log(`${fileName}.md has been generated in your current directory.`)); 
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+const init = async () => {
+    const answers = await inquirer.prompt(questions);
+    return writeToFile(answers.title, createTemplate(answers));
+}
 
 // Function call to initialize app
 init();
