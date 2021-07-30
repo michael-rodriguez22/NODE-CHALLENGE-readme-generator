@@ -1,16 +1,21 @@
+const licenses = require("./licenses");
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-
+  return license.badge ? `${license.badge}\n` : "";
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  return license.link ? `${license.link}` : "";
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  return `${license.name}\n${renderLicenseBadge(license)}\n${license.description.long}\n${renderLicenseLink(license)}`
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
@@ -34,10 +39,10 @@ ${answers.installation}
 ${answers.usage}
 
 ## License
-${answers.license}
+${renderLicenseSection(licenses[answers.license.match(/^[0-9]+/)])}
 
 ## Contributing
-${answers.contributions}
+${answers.contributing}
 
 ## Tests
 ${answers.tests}

@@ -20,6 +20,15 @@ function writeToFile(title, data) {
 
 // TODO: Create a function to initialize app
 const init = async () => {
+  console.log(
+    `WELCOME TO EZ-README!
+----------------------
+    Please answer the following prompts to generate your readme. 
+    Responding with markdown and basic html is supported if you wish to do so.
+    Certain fields are required to proceed.
+    Enjoy!
+    `
+  );
   const answers = await inquirer.prompt(questions);
   return writeToFile(answers.title, generateMarkdown(answers));
 };

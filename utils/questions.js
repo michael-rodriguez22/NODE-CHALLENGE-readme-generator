@@ -25,30 +25,31 @@ const questions = [
   },
   {
     type: "input",
-    name: "contributions",
+    name: "contributing",
     message: "What are the contribution guidelines for this project?",
   },
   {
     type: "input",
-    name: "test",
+    name: "tests",
     message: "How do users run tests for this application?",
   },
   {
     type: "list",
     name: "license",
     message: "Which of these licenses best fits your project?",
-    choices: [1, 2, 3] /*licenses.id licenses.name licenses.description.short*/,
+    choices: licenses.map((item, idx ) => `${idx} ${item.name} (${item.description.short})`),
   },
   {
     type: "input",
     name: "github",
-    message: "What is your github username?",
+    message: "What is your github username? (required)",
+    validate: (input) => input !== undefined,
   },
   {
     type: "input",
     name: "email",
-    message:
-      "What is a good email address to receive questions relating to this project?",
+    message: "What is a good email address to receive questions relating to this project? (required)",
+    validate: (input) => input !== undefined,
   },
 ];
 
