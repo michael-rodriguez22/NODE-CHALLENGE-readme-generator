@@ -42,7 +42,7 @@ SOFTWARE.`,
     name: "CC0",
     description: {
       short: "public domain dedication",
-      long: `This project has been to the public domain by waiving all of my rights to the project worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You may copy, modify, and distribute, even for commercial purposes, all without asking permission.`,
+      long: `This project has been dedicated to the public domain by waiving all of my rights to the project worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You may copy, modify, and distribute, even for commercial purposes, all without asking permission.`,
     },
     badge: "[![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)",
     link: "http://creativecommons.org/publicdomain/zero/1.0/",
